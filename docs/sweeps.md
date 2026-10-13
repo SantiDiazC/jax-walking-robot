@@ -1,7 +1,8 @@
 # Tutorial: simulate and compare a design grid
 
-This workflow directly evaluates the analytical model. It requires no training
-data, neural model or AI knowledge. All commands assume the repository root.
+This workflow simulates a grid of physical designs with the analytical model,
+checks each trajectory and compares their speeds. All commands assume the
+repository root.
 
 ## Choose the experiment
 
@@ -106,7 +107,7 @@ samples and a 0.02-second trajectory with matched initial state, RK4 and trace
 regularization. `--duration` and `--timestep` change this short comparison.
 
 The short check does not validate the entire one-second ranking or reproduce
-all `ode45` behavior. For a thesis study, independently run the selected YAML
+all `ode45` behavior. To validate a selected design, independently run its YAML
 parameters in the original full MATLAB script and compare the same objective,
 initial conditions, frequency and numerical resolution. Failure diagnostics
 remain saved when the strict comparison fails.

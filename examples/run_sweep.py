@@ -44,7 +44,7 @@ def main():
     if manifest.exists() and json.loads(manifest.read_text())!=fingerprint:raise ValueError('Cached source/protocol/backend mismatch; use a fresh directory.')
     write_json(manifest,fingerprint)
     for folder in ['screen','verification']:(output/folder).mkdir(exist_ok=True)
-    print(f'{len(designs)} designs on {jax.devices()}; no neural network.',flush=True)
+    print(f'Simulating {len(designs)} designs on {jax.devices()}.',flush=True)
     parameters=jnp.stack([d.parameters() for d in designs])
     initial=jax.jit(jax.vmap(solve_initial_pose))(parameters).at[:,1].add(base.simulation.initial_clearance_um*1e-6)
     initial.block_until_ready()

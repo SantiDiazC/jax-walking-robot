@@ -36,7 +36,9 @@ python -m pip install -e ".[analysis,notebooks]"
 jupyter lab
 ```
 
-Open the numbered notebooks under `tutorials/`. HTML animations need no encoder;
+Open the numbered notebooks under `tutorials/` in JupyterLab. The `notebooks`
+extra includes ipywidgets for design controls and trajectory time sliders.
+HTML animations need no encoder;
 MP4 requires FFmpeg with H.264 support. Neural training additionally requires
 `.[learning]` and the official NeRD source; see [optimization](optimization.md).
 The recorded neural experiments used PyTorch 2.9.1 and JAX 0.8.2.

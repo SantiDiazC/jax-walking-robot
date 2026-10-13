@@ -1,15 +1,25 @@
 # Tutorials
 
-Install `.[analysis,notebooks]`, launch `jupyter lab` from the repository root
-and select the Python environment containing this package.
+Install `python -m pip install -e ".[analysis,notebooks]"`, launch `jupyter lab`
+from the repository root and select the Python environment containing this
+package. Open the notebooks in JupyterLab to use their interactive controls.
+Run the cells in order; each step explains its inputs, action and results.
 
-1. `01_run_a_design.ipynb`: edit YAML, simulate, inspect physical checks and plots.
-2. `02_compare_designs.ipynb`: run 25 designs, read the CSV/maps, refine finalists
-   and optionally compare a selected design in MATLAB.
-3. `03_nerd_optimization.ipynb`: understand recorded neural predictions, a speed
-   cost, failed proposals and independent solver verification. Training is off
-   by default and requires the optional learning setup.
+1. `01_run_a_design.ipynb`: choose design parameters with sliders, preview the
+   initial geometry, save YAML and simulate. Inspect the motion with a time
+   slider, read physical checks and play the HTML animation.
+2. `02_compare_designs.ipynb`: select damping/thickness combinations, preview the
+   grid and run the sweep. Compare speed and penetration maps, explore individual
+   cases and animate the verified finalist. A final step runs a MATLAB comparison.
+3. `03_nerd_optimization.ipynb`: vary the target speed to explore the cost, compare
+   recorded neural predictions with solver verification, and inspect the
+   physical-search candidate. The last step provides the training workflow.
 
-The first two tutorials require neither AI packages nor a GPU. Generated files
-go under ignored `outputs/`. Notebook files are committed without bulky outputs.
-Commands, units and validation scope are explained under `docs/`.
+Design controls update previews. Execute the simulation or sweep cell to compute
+new trajectories. Each execution saves a fresh experiment under ignored
+`outputs/`, together with its input YAML. The time slider displays sampled
+recorded states; physical reports retain checks at every integration step.
+
+`_widgets.py` provides the shared robot drawing and trajectory views. Notebook
+files are committed with empty outputs. Commands, units and validation scope
+are explained under `docs/`.

@@ -1,5 +1,5 @@
 # Reproduce the commented 5 x 5 damping/thickness grid in the archived MATLAB.
-# This is an independent solver sweep: no neural network or training required.
+# Simulate each combination with the analytical dynamics solver.
 base_design: ../designs/matlab_reference.yaml
 design_overrides:
   voltage_v: 200.0

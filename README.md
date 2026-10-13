@@ -2,11 +2,11 @@
 
 Simulate a planar piezoelectric walking robot, compare physical designs and
 create plots and animations from editable YAML files. The analytical dynamics
-are ported from the MATLAB thesis model included in this repository.
+are ported from the MATLAB dynamics model included in this repository.
 
-**No AI knowledge, neural network, MATLAB or GPU is required for simulation or
-design sweeps.** An optional NeRD research component proposes designs for
-verification with the analytical solver.
+The simulator computes robot motion and checks speeds, ground penetration and
+other physical limits. The NeRD research component learns from simulated
+trajectories and proposes designs for verification with the analytical solver.
 
 ## Run one design
 
@@ -73,7 +73,8 @@ See [timing methodology](docs/performance.md).
 ## Tutorials and documentation
 
 Start with the [tutorial notebooks](tutorials/README.md): one design, a physical
-sweep and then the optional neural experiment.
+sweep and then the NeRD design optimization experiment. The notebooks include
+parameter controls, geometry previews and a time slider to inspect robot motion.
 
 - [Physical model](docs/physical_model.md).
 - [Validation and its limits](docs/validation.md).
@@ -92,9 +93,9 @@ The physical 1 m/s candidate was found by solver search, not by NeRD.
 src/walking_robot/      Analytical solver, geometry, validation and neural adapters
 examples/designs/      Editable single-design YAML files
 examples/sweeps/       Editable parameter grids
-examples/learning/     Advanced experimental protocols
-tutorials/             Beginner-to-advanced notebooks
-docs/                  User guides, model explanation and research history
+examples/learning/     NeRD training and optimization protocols
+tutorials/             Step-by-step interactive notebooks
+docs/                  User guides, model explanation and experimental results
 benchmarks/            Reproducible timing tools
 tools/                 Verification and research entry points
 reference/matlab/      Original MATLAB, helpers and generated reference equations

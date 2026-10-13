@@ -1,8 +1,8 @@
-# Optional NeRD design optimization
+# NeRD design optimization
 
-An ordinary physical sweep enumerates designs and simulates each directly;
-it requires no neural model. NeRD is an optional approximation trained on solver
-trajectories using the official NeRD GPT backbone and local trajectory adapters.
+A physical sweep enumerates designs and simulates each directly. NeRD learns an
+approximation of solver trajectories using the official NeRD GPT backbone and
+local trajectory adapters, then uses this approximation to search for designs.
 
 With trained weights frozen, a cost such as
 `(predicted_mean_speed - target_speed)**2` supplies gradients with respect to
@@ -26,6 +26,6 @@ Its unattended optimization gate is disabled. Independent physical verification
 remains necessary even when the neural forecast looks plausible.
 
 For training commands and evidence, read [the expanded study](expanded_design.md).
-These dependencies and checkpoints are unnecessary for the beginner simulation
-and sweep tutorials. Generated model and verification reports stay under
-ignored `outputs/`; the optional notebook also works when none are present.
+Generated model and verification reports stay under ignored `outputs/`.
+The NeRD notebook explains the cost function and the recorded prediction checks;
+it also displays local training and verification reports when available.
