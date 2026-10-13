@@ -1,0 +1,24 @@
+# Expanded geometry/material study. Actuation remains fixed throughout.
+base_design: ../designs/matlab_supported.yaml
+voltage_v: 200.0
+drive_frequency_hz: 363.0
+seed: 20261013
+sample_count: 96
+# [adhesive thickness (um), front angle (deg), hind angle (deg)]
+bounds: [[0.5, 12.0], [70.0, 130.0], [95.0, 155.0]]
+screen_horizon_s: 1.0
+screen_timestep_s: 0.00001
+batch_size: 4
+finalist_count: 5
+verification_horizon_s: 2.0
+verification_timesteps_s: [0.0000025, 0.00000125]
+targets_m_s: [1.0, 1.2]
+minimum_improvement_m_s: 0.0005
+uncertainty_factor: 2.0
+max_speed_timestep_difference_m_s: 0.001
+max_penetration_timestep_difference_um: 2.0
+robustness_variants: 3
+robustness_seed: 20261014
+height_perturbation_um: 20.0
+tilt_perturbation_deg: 0.05
+speed_perturbation_m_s: 0.01

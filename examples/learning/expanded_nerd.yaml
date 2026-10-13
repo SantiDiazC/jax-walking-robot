@@ -1,0 +1,22 @@
+# Three design variables; fixed actuation, with explicit COM velocity supervision.
+design_space: expanded_design_search.yaml
+seed: 20261015
+design_count: 48
+bounds: [[0.5, 4.0], [70.0, 130.0], [95.0, 135.0]]
+horizon_s: 2.0
+output_timestep_s: 0.0001
+integration_timestep_s: 0.00001
+reference_rtol: 0.000000001
+width: 96
+layers: 2
+batch_size: 512
+iterations: 6000
+learning_rate: 0.0003
+validation_every: 500
+com_velocity_scale_m_s: 0.02
+mean_speed_scale_m_s: 0.0025
+max_foot_height_rmse_m: 0.0001
+targets_m_s: [1.0, 1.2]
+optimization_starts: 16
+optimization_iterations: 400
+optimization_learning_rate: 0.005

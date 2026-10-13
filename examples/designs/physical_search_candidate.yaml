@@ -1,0 +1,30 @@
+# Derivative-free physical-search candidate, not a certified global optimum.
+# Verified at 1/2 s, three timesteps and three perturbed initial conditions.
+# Uses the original MATLAB design-dependent, rounded excitation frequency.
+design:
+  profile: matlab
+  damping_ratio: 0.01
+  adhesive_thickness_um: 1.375
+  voltage_v: 200.0
+  front_angle_deg: 96.66666666666667
+  hind_angle_deg: 125.0
+  front_leg_offset_mm: 2.8
+  hind_leg_offset_mm: 2.5
+simulation:
+  duration_s: 2.0
+  timestep_s: 0.0000025
+  initial_clearance_um: 0.0
+visualization:
+  formats: [mp4, html]
+  fps: 30
+  playback_speed: 0.25
+  max_frames: 240
+  stop_at_violation: false
+physical_limits:
+  max_foot_penetration_m: 0.00025
+  max_body_penetration_m: 0.0001
+  max_body_height_m: 0.01
+  max_center_speed_m_s: 3.5
+  max_foot_speed_m_s: 5.0
+  max_angular_speed_rad_s: 2000.0
+  max_relative_angle_rad: 1.0

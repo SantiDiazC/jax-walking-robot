@@ -1,0 +1,9 @@
+# CPU simulation, sweeps, tests and notebooks. Neural training is optional.
+name: walking-robot
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - "-e .[analysis,test,notebooks]"

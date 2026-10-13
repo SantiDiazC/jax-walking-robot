@@ -1,0 +1,29 @@
+# Experimental trajectory decoder using the official NeRD GPT backbone.
+# Canonical supported start only; no random initial states or external forcing.
+design: ../designs/matlab_supported.yaml
+seed: 73
+design_count: 18
+horizon_s: 2.0
+output_timestep_s: 0.0001
+integration_timestep_s: 0.00001
+reference_rtol: 0.000000001
+gap_width_um: 2.0
+velocity_width_m_s: 0.0001
+force_width_uN: 1.0
+width: 96
+layers: 2
+batch_size: 1024
+iterations: 12000
+validation_every: 500
+learning_rate: 0.0003
+sensitivity_weight: 0.1
+sensitivity_epsilon: 0.001
+kinematic_weight: 0.1
+max_speed_error_m_s: 0.0025
+max_foot_height_rmse_m: 0.0001
+max_state_rmse: 0.1
+max_kinematic_rmse: 0.1
+max_gradient_relative_error: 0.25
+min_gradient_cosine: 0.9
+min_ranking_agreement: 0.9
+ranking_tolerance_m_s: 0.001

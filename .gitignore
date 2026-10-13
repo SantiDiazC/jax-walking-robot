@@ -1,0 +1,25 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+.venv/
+.ipynb_checkpoints/
+outputs/
+.jax_cache/
+.DS_Store
+# Generated measurements and run artifacts are kept locally, not published.
+reference/validation/
+docs/assets/
+*.png
+*.gif
+*.mp4
+*.npz
+*.mat
+*.pt
+*.pth
+*.pkl
+*.log
+.env
+.env.*

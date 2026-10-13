@@ -1,0 +1,25 @@
+{
+  "original_sources": {
+    "matlab_code/robot_dynamics_jax.py": "959125603135db91aa14640f355aac7fbf2be5d898710cb3ebe07d6ec064a896",
+    "matlab_code/computeM_gen.m": "149a465f1a415d4dbe797a6f2ae94dbfb132b63bea5e8afc41e841e938d73912",
+    "matlab_code/computeF_gen.m": "8161e93103ffcde5dcf6a22b3082cb293dec2adef99fbd45d1ef944c2fa764df",
+    "matlab_code/computeSdot_gen.m": "64da03f877f9b1332213b3bf8943c266103134957f926a8ccbb358e0ec3d3df4",
+    "matlab_code/solveInitialPose_gen.m": "52b6937ee098e41a4fa3a4659da519dbc2aee0b991b709aafe89aef5ed4668ef",
+    "matlab_code/Setup_Symbolic_Gen.m": "042bd1e0020faa0fd7d5fed7cf80b3b3b2a8abc85148369ddc6f77a0ad40018c",
+    "matlab_code/RobotDynamics_mulbo_legdirstiff_stribeck_karnopp_iCVD_dam_thick.m": "0ae2814bf459d9e8780ea56363cc6bfbea7e1c266bdc8489ab31c392760c44b5",
+    "matlab_code/sub functions_piezo/sub functions/MomentPiezo.m": "5ef22073ab659712f8ed951b73dcd6a6f92b7a17398408ad039d54e5be4c759e",
+    "matlab_code/sub functions_piezo/sub functions/parallel_axis.m": "607304a812c6cecc9beb4ce4228f6283342b5df58cf917c65f0da0e9eae17dd7",
+    "matlab_code/sub functions_piezo/sub functions/inertia_2.m": "905df84505643fe7b5b8b4f42c5e72a771a9687bb6d93db52e3db0dfd903044f",
+    "matlab_code/subfunctions/sub/diffT.m": "2ac71dd33a41e508c9a5d72e59cafb74d71042e42fc1b6942f80fbe71ea54b55",
+    "matlab_code/subfunctions/sub/MFdynamicsOrderedkarnopp.m": "ec821fc50c0d0a26ba8189cdad0f5d8b1e290663e410b5d97282a48318de4880",
+    "matlab_code/subfunctions/sub/dynamicsFunction_leg.m": "46f2ad1abcc6d25a20570939fa2e96602b1fd28c1e1efa4acf92f7a8aa0de815"
+  },
+  "migration": {
+    "jax": "Split original functions into modules; equations, signatures and numerical defaults preserved.",
+    "generated_matlab": "Copied verbatim from matlab_code, not the different workspace-root exports.",
+    "symbolic_matlab": "Corrected parameter index comments, export paths and removed stale pose-generator code; bounded pose function is maintained separately.",
+    "original_matlab_script": "Archived verbatim, including original paths and plotting dependencies. Its contact settings differ from the JAX parameter map.",
+    "matlab_profile": "Optional reconciled material/contact profile. Legacy map and exported equations remain unchanged; P[41]>0 stores independent hind stiffness and selects explicit Newton/Euler contact balances.",
+    "initial_clearance": "Original pose target is 1 um, followed by an additional 500 um upward shift in X0. New YAML makes the resulting 501 um drop explicit; supported runs use zero clearance."
+  }
+}

@@ -1,0 +1,35 @@
+# Paths are relative to this file. All distances and times have explicit units.
+design: ../designs/matlab_supported.yaml
+seed: 42
+design_count: 36
+trajectories_per_design: 4  # First trajectory always uses the YAML initial state.
+horizon_s: 0.2
+neural_timestep_s: 0.0001
+generation_batch_size: 8
+
+# Other trajectories have independent, bounded initial-state perturbations.
+height_um: 30.0           # Additional height sampled from [0, height_um].
+tilt_deg: 0.1            # Shared body rotation, sampled symmetrically.
+horizontal_speed_m_s: 0.02
+vertical_speed_m_s: 0.01
+angular_speed_rad_s: 2.0
+random_actuator_phase: true
+
+batch_size: 64
+learning_rate: 0.0003
+validation_every: 300
+# Equal weights over all predicted steps; no exponential discount.
+curriculum:
+  - {iterations: 300, steps: 1}
+  - {iterations: 300, steps: 4}
+  - {iterations: 400, steps: 16}
+  - {iterations: 500, steps: 64}
+  - {iterations: 300, steps: 128}
+
+# These are exploratory acceptance thresholds, separate from physical limits.
+max_speed_error_m_s: 0.0025
+max_foot_height_rmse_m: 0.0001
+min_ranking_agreement: 0.9
+ranking_tolerance_m_s: 0.001
+gradient_design_count: 3  # Validation designs; test designs never select weights.
+gradient_unit_epsilons: [0.01, 0.001]

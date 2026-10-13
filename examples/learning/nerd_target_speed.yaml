@@ -1,0 +1,10 @@
+# Broad exploratory neural search; the best proposal is screened physically.
+training_study: nerd_trajectory_kinematic.yaml
+seed: 20261013
+horizon_s: 2.0
+targets_m_s: [1.0, 1.2]
+grid_count: 81
+starts: 12
+iterations: 300
+learning_rate: 0.01
+verification_timesteps_s: [0.0000025, 0.00000125]

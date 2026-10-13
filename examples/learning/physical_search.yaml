@@ -1,0 +1,39 @@
+# Physical, derivative-free reference. Paths are relative to this YAML.
+design: ../designs/matlab_supported.yaml
+seed: 42
+thickness_bounds_um: [0.5, 2.0]
+front_angle_bounds_deg: [90.0, 100.0]
+grid_counts: [5, 7]
+refinement_count: 5
+batch_size: 6
+search_horizon_s: 1.0
+search_timestep_s: 0.00001
+finalist_count: 3
+verification_horizons_s: [1.0, 2.0]
+verification_timesteps_s: [0.00001, 0.000005, 0.0000025]
+minimum_improvement_m_s: 0.0005
+uncertainty_factor: 2.0
+max_speed_timestep_difference_m_s: 0.001
+max_penetration_timestep_difference_um: 2.0
+robustness_variants: 3
+robustness_horizon_s: 1.0
+robustness_timesteps_s: [0.000005, 0.0000025]
+height_perturbation_um: 20.0
+tilt_perturbation_deg: 0.05
+speed_perturbation_m_s: 0.01
+
+# Independent CPU integration diagnostics, including the previously sensitive
+# interior design 24. These settings do not change the search reference law.
+comparison_horizon_s: 0.2
+comparison_designs: [[1.0, 95.0], [1.5237432559624633, 91.3975248360931]]
+comparison_methods: [DOP853, Radau]
+comparison_rtols: [0.00001, 0.0000001]
+comparison_max_step_s: 0.0002
+comparison_sample_timestep_s: 0.000005
+comparison_max_rhs_calls: 300000
+comparison_max_wall_s: 180.0
+compare_smooth_contact: true
+gap_width_um: 2.0
+velocity_width_m_s: 0.0001
+force_width_uN: 1.0
+gradient_unit_epsilons: [0.01, 0.001]

@@ -1,0 +1,25 @@
+# NeRD proposes; the original-contact solver accepts/rejects every update.
+training_study: nerd_trajectory_kinematic.yaml
+initial_design: ../designs/matlab_supported.yaml
+horizon_s: 2.0
+timesteps_s: [0.0000025, 0.00000125]
+iterations: 3
+backtracks: 3
+unit_step: 0.003
+minimum_unit_step: 0.00025
+trust_radius: 0.01
+minimum_improvement_m_s: 0.0001
+uncertainty_factor: 2.0
+max_speed_timestep_difference_m_s: 0.001
+max_penetration_timestep_difference_um: 2.0
+max_forecast_relative_error: 0.25
+max_surrogate_speed_error_m_s: 0.0025
+
+# Independent final checks, frozen before the search starts.
+verification_horizons_s: [1.0, 2.0]
+robustness_variants: 3
+robustness_seed: 20261013
+height_perturbation_um: 20.0
+tilt_perturbation_deg: 0.05
+speed_perturbation_m_s: 0.01
+random_actuator_phase: true

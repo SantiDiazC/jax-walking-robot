@@ -1,0 +1,31 @@
+# Original hard-contact solver candidate; verified at two resolutions and four starts.
+# Simulated mean COM speed during seconds 1–2: 1.00476–1.00483 m/s.
+# Physical limits are provisional. See docs/expanded_design.md for the documented study.
+design:
+  profile: matlab
+  damping_ratio: 0.01
+  adhesive_thickness_um: 2.6510431237373395
+  voltage_v: 200.0
+  front_angle_deg: 109.0817706014036
+  hind_angle_deg: 99.56825408934093
+  front_leg_offset_mm: 2.8
+  hind_leg_offset_mm: 2.5
+  drive_frequency_hz: 363.0
+simulation:
+  duration_s: 2.0
+  timestep_s: 0.00000125
+  initial_clearance_um: 0.0
+visualization:
+  formats: [mp4, html]
+  fps: 30
+  playback_speed: 0.01
+  max_frames: 150
+  stop_at_violation: false
+physical_limits:
+  max_foot_penetration_m: 0.00025
+  max_body_penetration_m: 0.0001
+  max_body_height_m: 0.01
+  max_center_speed_m_s: 3.5
+  max_foot_speed_m_s: 5.0
+  max_angular_speed_rad_s: 2000.0
+  max_relative_angle_rad: 1.0

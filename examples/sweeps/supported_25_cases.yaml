@@ -1,0 +1,21 @@
+# Same 25 damping/thickness combinations, starting supported rather than dropped.
+base_design: ../designs/matlab_supported.yaml
+design_overrides:
+  voltage_v: 200.0
+  drive_frequency_hz: null  # MATLAB's design-dependent frequency; use 363.0 to fix it.
+parameters:
+  damping_ratio: [0.01, 0.03, 0.05, 0.07, 0.09]
+  adhesive_thickness_um: [1.0, 5.0, 10.0, 30.0, 50.0]
+simulation:
+  duration_s: 1.0
+  timestep_s: 0.00001
+  initial_clearance_um: 0.0
+execution:
+  batch_size: 5
+  saved_timestep_s: 0.0001
+objective: late_mean_com_speed_m_s
+verification:
+  top_cases: 3
+  timesteps_s: [0.000005, 0.0000025]
+  max_speed_difference_m_s: 0.001
+  max_penetration_difference_m: 0.000002

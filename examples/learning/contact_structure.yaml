@@ -1,0 +1,31 @@
+# Experimental contact residual comparator; paths are relative to this YAML.
+design: ../designs/matlab_supported.yaml
+reference_dataset: ../../outputs/nerd_curriculum/dataset.npz
+prior_gradient_report: ../../outputs/nerd_curriculum/gradient_validation.json
+hard_sensitivity_report: ../../outputs/contact_sensitivity/report.json
+smooth_sensitivity_report: ../../outputs/contact_smooth_sensitivity/report.json
+seed: 42
+horizon_s: 0.2
+gradient_design_ids: [24]
+gradient_unit_epsilons: [0.01, 0.001]
+physical_timesteps_s: [0.00001, 0.000005, 0.0000025, 0.00000125]
+
+# Smoothing is a separate exploratory model, with no change to MATLAB mode.
+gap_width_um: 2.0
+velocity_width_m_s: 0.0001
+force_width_uN: 1.0
+
+network_width: 32
+max_log_correction: 0.25  # Positive multipliers in [exp(-0.25), exp(0.25)].
+training_mode: hard
+neural_timestep_s: 0.0001
+integration_substeps: 2
+training_iterations: 600
+batch_size: 64
+window_steps: 8
+learning_rate: 0.001
+validation_every: 100
+max_speed_error_m_s: 0.0025
+max_foot_height_rmse_m: 0.0001
+min_ranking_agreement: 0.9
+ranking_tolerance_m_s: 0.001

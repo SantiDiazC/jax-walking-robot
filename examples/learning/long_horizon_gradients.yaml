@@ -1,0 +1,26 @@
+# Multi-design continuation of the validated smooth-contact local check.
+study: physical_search.yaml
+# Each values pair is [adhesive thickness in micrometers, front angle in degrees].
+designs:
+  - name: baseline
+    values: [1.0, 95.0]
+  - name: physical_candidate
+    values: [1.375, 96.66666666666667]
+  - name: interior_reference
+    values: [1.5237432559624633, 91.3975248360931]
+horizons_s: [0.2, 1.0, 2.0]
+rtols: [0.00000001, 0.000000001]
+# A 1%-range thickness perturbation of the candidate crosses a rounded
+# frequency boundary. Smaller local probes keep the discrete regime fixed.
+unit_epsilons: [0.003, 0.001]
+direction_step: 0.003
+# Uniform integration boundaries; every smaller accepted step is also screened.
+sample_timestep_s: 0.00001
+refined_sample_timestep_s: 0.000005
+max_rhs_calls: 12000000
+gradient_relative_tolerance: 0.25
+direction_relative_tolerance: 0.25
+minimum_verified_gain_m_s: 0.000001
+uncertainty_factor: 2.0
+hard_bridge_horizons_s: [1.0, 2.0]
+hard_bridge_timesteps_s: [0.000005, 0.0000025]

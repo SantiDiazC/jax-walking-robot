@@ -1,0 +1,23 @@
+# Reconciled material/contact model, starting with feet supported at y=0.
+# This deliberately omits the 0.501 mm drop in matlab_reference.yaml.
+design:
+  profile: matlab
+  damping_ratio: 0.01
+  adhesive_thickness_um: 1.0
+  voltage_v: 200.0
+  front_angle_deg: 95.0
+  hind_angle_deg: 125.0
+  front_leg_offset_mm: 2.8
+  hind_leg_offset_mm: 2.5
+
+simulation:
+  duration_s: 0.2
+  timestep_s: 0.00001
+  initial_clearance_um: 0.0
+
+visualization:
+  formats: [gif, html]
+  fps: 30
+  playback_speed: 0.01
+  max_frames: 600
+  stop_at_violation: false

@@ -1,0 +1,23 @@
+# Reproduce the archived MATLAB numerical setup and initial drop.
+# The legacy baseline.yaml remains available for comparisons.
+design:
+  profile: matlab
+  damping_ratio: 0.01
+  adhesive_thickness_um: 1.0
+  voltage_v: 200.0
+  front_angle_deg: 95.0
+  hind_angle_deg: 125.0
+  front_leg_offset_mm: 2.8
+  hind_leg_offset_mm: 2.5
+
+simulation:
+  duration_s: 0.2
+  timestep_s: 0.00001
+  initial_clearance_um: 501.0  # 1 um pose target + 500 um drop in original X0.
+
+visualization:
+  formats: [gif, html]
+  fps: 30
+  playback_speed: 0.01
+  max_frames: 600
+  stop_at_violation: false

@@ -1,0 +1,31 @@
+# Copy this file to try another robot design. Units are included in each name.
+design:
+  damping_ratio: 0.01
+  adhesive_thickness_um: 1.0   # Adhesive thickness in micrometers.
+  voltage_v: 200.0            # Actuation voltage in volts.
+  front_angle_deg: 95.0       # Front leg angle in degrees.
+  hind_angle_deg: 125.0       # Hind leg angle in degrees.
+  front_leg_offset_mm: 0.25   # Distance from the front body edge, in mm.
+  hind_leg_offset_mm: 0.25    # Distance from the hind body edge, in mm.
+
+simulation:
+  duration_s: 0.1             # Simulated time in seconds.
+  timestep_s: 0.00001         # RK4 timestep; verify convergence before increasing.
+
+visualization:
+  formats: [gif, html]        # Add mp4 if ffmpeg is installed.
+  fps: 30                    # Frames per second of the exported movie.
+  playback_speed: 0.01       # 0.01 = 100x slow motion (before any frame cap).
+  max_frames: 600            # Cap file size; actual playback speed is recorded.
+  stop_at_violation: false   # Show full finite motion and mark failed checks.
+
+# Optional provisional screening limits (meters, seconds and radians).
+# These change the checks; they do not change the simulated motion.
+# physical_limits:
+#   max_foot_penetration_m: 0.00025
+#   max_body_penetration_m: 0.0001
+#   max_body_height_m: 0.01
+#   max_center_speed_m_s: 3.5
+#   max_foot_speed_m_s: 5.0
+#   max_angular_speed_rad_s: 2000.0
+#   max_relative_angle_rad: 1.0
