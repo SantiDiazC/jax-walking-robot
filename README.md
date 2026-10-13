@@ -10,10 +10,11 @@ trajectories and proposes designs for verification with the analytical solver.
 
 ## Run one design
 
-Use Python 3.11 in a virtual or Conda environment. From the repository root:
+Use Python 3.11 in a virtual or Conda environment. Activate the environment you
+will use for the simulator and notebooks. From the repository root:
 
 ```bash
-python -m pip install -e ".[analysis,test]"
+python -m pip install -e ".[analysis,notebooks,test]"
 JAX_PLATFORMS=cpu python examples/run_design.py \
   --design examples/designs/matlab_supported.yaml \
   --output outputs/my_robot
@@ -75,6 +76,9 @@ See [timing methodology](docs/performance.md).
 Start with the [tutorial notebooks](tutorials/README.md): one design, a physical
 sweep and then the NeRD design optimization experiment. The notebooks include
 parameter controls, geometry previews and a time slider to inspect robot motion.
+Open them in JupyterLab or VS Code and select the environment used for the
+installation above as the notebook kernel. Restart the kernel after installing
+dependencies; see [notebook setup](docs/installation.md#notebook-kernel).
 
 - [Physical model](docs/physical_model.md).
 - [Validation and its limits](docs/validation.md).

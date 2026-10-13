@@ -1,8 +1,11 @@
 # Tutorials
 
-Install `python -m pip install -e ".[analysis,notebooks]"`, launch `jupyter lab`
-from the repository root and select the Python environment containing this
-package. Open the notebooks in JupyterLab to use their interactive controls.
+Activate the Python environment you will use as the notebook kernel, then run
+`python -m pip install -e ".[analysis,notebooks]"` from the repository root.
+This installs the package and its interactive controls in that environment.
+Launch `python -m jupyterlab`, or open the notebooks in VS Code and select that
+environment with **Select Kernel → Python Environments**. Restart the kernel
+after installing dependencies. See [notebook setup](../docs/installation.md#notebook-kernel).
 Run the cells in order; each step explains its inputs, action and results.
 
 1. `01_run_a_design.ipynb`: choose design parameters with sliders, preview the
